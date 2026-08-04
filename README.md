@@ -43,20 +43,7 @@ The complete bibliography is available in [`REFERENCES.md`](REFERENCES.md). It i
 
 ## Author
 
-**Osvaldo Luiz dos Santos Pereira**
-
-- [Academic webpage](https://ozsp12.github.io/)
-- [Currículo Lattes](http://lattes.cnpq.br/6730251976463283)
-- [ORCID](https://orcid.org/0000-0003-2231-517X)
-- [Google Scholar](https://scholar.google.com/citations?user=HIZp0X8AAAAJ&hl=en)
-- [ResearchGate](https://www.researchgate.net/profile/Osvaldo-Santos-Pereira)
-- [GitHub](https://github.com/ozsp12)
-- [LinkedIn](https://www.linkedin.com/in/ozsp12)
-- [Substack](https://substack.com/@olsp1982)
-- [Medium](https://medium.com/@ozsp12)
-- [YouTube](https://www.youtube.com/@ozlsp12)
-- [TikTok](https://www.tiktok.com/@ozsp12)
-- [Patreon](https://www.patreon.com/ozsp12)
+**Osvaldo Luiz dos Santos Pereira** — [Academic webpage](https://ozsp12.github.io/) · [Lattes](http://lattes.cnpq.br/6730251976463283) · [ORCID](https://orcid.org/0000-0003-2231-517X) · [Google Scholar](https://scholar.google.com/citations?user=HIZp0X8AAAAJ&hl=en) · [ResearchGate](https://www.researchgate.net/profile/Osvaldo-Santos-Pereira) · [GitHub](https://github.com/ozsp12) · [LinkedIn](https://www.linkedin.com/in/ozsp12) · [Substack](https://substack.com/@olsp1982) · [Medium](https://medium.com/@ozsp12) · [YouTube](https://www.youtube.com/@ozlsp12) · [X](https://x.com/ozsp12)
 - [X](https://x.com/ozsp12)
 
 ## License and reuse
