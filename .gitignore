@@ -1,0 +1,8 @@
+# Generated results only; historical files under data/, notebooks/, thesis/ are untouched.
+__pycache__/
+*.pyc
+assets/dataset.csv
+assets/tables_eda/*.csv
+assets/figures_eda/*.png
+assets/tables_thesis/*.csv
+assets/figures_thesis/*.png
