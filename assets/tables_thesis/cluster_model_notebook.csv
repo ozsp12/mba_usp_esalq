@@ -1,0 +1,2 @@
+n_samples,n_features,n_clusters,init,n_init,max_iter,kmeans_random_state,synthetic_seed,preprocessor,inertia
+5200,51,6,random,10,300,42,42,MinMaxScaler,2096.840897262534
