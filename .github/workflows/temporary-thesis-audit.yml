@@ -1,0 +1,26 @@
+name: Temporary thesis audit
+on:
+  push:
+    branches: ["refactor/three-stage-pipeline"]
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Print thesis research methodology and numeric analysis sections
+        shell: bash
+        run: |
+          pdftotext -layout thesis/tcc_mba_usp_esalq_ds_osvaldo_pereira_20230725.pdf /tmp/thesis.txt
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          s=Path('/tmp/thesis.txt').read_text(errors='replace')
+          print('THESIS LENGTH',len(s),'FORM FEEDS',s.count('\f'))
+          print('=== THESIS CONTENTS FIRST PAGES ===')
+          print(s[:7500])
+          for pattern in [r'(?i)metodologia',r'(?i)normaliza',r'(?i)padroniza',r'(?i)k.means',r'(?i)gráfico de cotovelo',r'(?i)cotovelo',r'(?i)silhouette',r'(?i)elbow',r'(?i)dispersão',r'(?i)resultados',r'(?i)principais componentes']:
+            found=list(re.finditer(pattern,s))
+            print('=== PATTERN:',pattern,'COUNT',len(found),'===')
+            for m in found[-5:]:
+              print('OFFSET',m.start(),repr(s[max(0,m.start()-550):m.start()+1350]))
+          PY
