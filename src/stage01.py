@@ -190,7 +190,7 @@ def run(*, workbook: Path = ROOT / "data" / "deparas.xlsx",
     #
     dp = CreatesDFDP(k = 0.15)
     #
-    dpdummy = pd.read_excel('../data/deparas.xlsx',sheet_name = 'dummy')
+    dpdummy = pd.read_excel(workbook, sheet_name='dummy')
     #
     df1 = CreateCluster(dp,'c1',dpuf,dpdummy,2500)
     df2 = CreateCluster(dp,'c2',dpuf,dpdummy,800)

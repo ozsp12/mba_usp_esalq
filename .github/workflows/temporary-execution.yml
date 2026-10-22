@@ -1,0 +1,37 @@
+name: Temporary three-stage functional execution
+on:
+  push:
+    branches: ["refactor/three-stage-pipeline"]
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install runtime dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Run stage 01 against original Excel metadata
+        run: python src/stage01.py --seed 42
+      - name: Run stage 02 from generated CSV
+        run: python src/stage02.py
+      - name: Run stage 03 from generated CSV
+        run: python src/stage03.py
+      - name: Run stage 03 against historical Excel dataset
+        run: python src/stage03.py --input data/cluster_analysis.xlsx
+      - name: Report produced CSV and PNG assets
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import pandas as pd
+          a=Path('assets')
+          df=pd.read_csv(a/'dataset.csv')
+          print('Dataset:', df.shape, 'clusters:', df.ClusterName.value_counts().to_dict())
+          for d in ['tables_eda','figures_eda','tables_thesis','figures_thesis']:
+              ext='.csv' if d.startswith('tables') else '.png'
+              paths=sorted((a/d).glob('*'+ext))
+              print(d,len(paths),[p.name for p in paths[:10]])
+              assert len(paths)>0, d
+          PY
