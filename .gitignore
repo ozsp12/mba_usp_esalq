@@ -1,0 +1,5 @@
+# Python execution artifacts; original research inputs remain tracked.
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
