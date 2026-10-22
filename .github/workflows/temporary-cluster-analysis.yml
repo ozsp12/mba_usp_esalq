@@ -3,8 +3,7 @@ name: One-time cluster_analysis export
 on:
   push:
     branches: [main]
-    paths:
-      - ".github/workflows/temporary-cluster-analysis.yml"
+  workflow_dispatch:
 
 permissions:
   contents: write
