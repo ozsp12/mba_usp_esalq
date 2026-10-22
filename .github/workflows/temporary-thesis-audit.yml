@@ -7,14 +7,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Install PDF text extractor
+        run: python -m pip install pymupdf
       - name: Print thesis research methodology and numeric analysis sections
         shell: bash
         run: |
-          pdftotext -layout thesis/tcc_mba_usp_esalq_ds_osvaldo_pereira_20230725.pdf /tmp/thesis.txt
           python - <<'PY'
           from pathlib import Path
           import re
-          s=Path('/tmp/thesis.txt').read_text(errors='replace')
+          import fitz
+          doc=fitz.open('thesis/tcc_mba_usp_esalq_ds_osvaldo_pereira_20230725.pdf')
+          s='\f'.join(page.get_text(sort=True) for page in doc)
           print('THESIS LENGTH',len(s),'FORM FEEDS',s.count('\f'))
           print('=== THESIS CONTENTS FIRST PAGES ===')
           print(s[:7500])
