@@ -1,0 +1,2 @@
+n_clusters,seed,n_init,scaler,inertia,n_branches,n_features
+6,42,10,standard,84072.90246233379,5200,51
